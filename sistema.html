@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main>
+    <section>
+      <h2>Lista de Cardápio</h2>
+      <h2>Sistema cozinha</h2>
+
+      <table>
+        <tr>
+          <th>Turno</th>
+          <th>Data</th>
+          <th>Refeição</th>
+        </tr>
+        <tr>
+          <td>Manhã</td>
+          <td>22/09/2025</td>
+          <td>Almoço</td>
+        </tr>
+        <tr>
+          <td>Tarde</td>
+          <td>22/09/2025</td>
+          <td>Almoço</td>
+        </tr>
+        <tr>
+          <td>Noite</td>
+          <td>22/09/25</td>
+          <td>Janta</td>
+        </tr>
+        <tr>
+          <td>Integral</td>
+          <td>22/09/2025</td>
+          <td>Lanche</td>
+        </tr>
+
+      </table>
+
+      <aside>
+        <h2>Cadastrar prato</h2>
+    <input type="date" id="nome" name="nome" placeholder="nome"><br>
+    <input type="email" id="email" name="email" placeholder="email"><br>
+    <input type="password" id="senha" name="senha" placeholder="senha"><br>
+    <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="confirmarSenha"><br>
+
+    <button id="Cadastrar">Cadastrar</button>
+
+      </aside>
+
+      <section>
+        <h2>Fale Conosco</h2>
+
+        <select name="assunto" id="assunto" placeholder="Escolha o Assunto">
+          <option value="" selected disabled>Escolha o Assunto</option>
+          <option value="elogios">Elogio</option>
+           <option value="reclamação">Reclamação</option>
+            <option value="critica">Critica</option>
+
+        </select><br>
+
+        <textarea>
+
+        </textarea>
+
+        <button id="enviar">Enviar</button>
+
+      </section>
+    </section>
+  </main>
+</body>
+
+</html>
