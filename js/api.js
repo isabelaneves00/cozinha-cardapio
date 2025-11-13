@@ -1,4 +1,4 @@
-const API_USUARIOS = "https://api-storage-cantina-main-seven.vercel.app/"
+const API_USUARIOS = "https://cozinha-system-wrq6.onrender.com"
 async function tratarErroResponse(res, msgPadrao) {
     const textErro = await res.text();
     let msgErro;
@@ -88,7 +88,92 @@ async function recuperarSenha(email) {
         return { sucesso: false, mensagem: "Error de conexão a API" }
 
     }
+
 }
+
+
+export async function listarCardapio() {
+    try {
+        const res= await fetch(API_USUARIOS)
+        const cardapio= await res.json();
+        return cardapios;
+
+
+    } catch (error) {
+        console.error("erro ao listar cardapio".error);
+        alert("Ocorreu um erro ao carregar cardapio");
+
+
+
+    }
+    
+}
+
+export async function cadastrarCardapio(cardapio) {
+    try {
+        cardapio.usuarioId=number(localStorage.getItem("usuarioId"));
+         const res= await fetch(API_USUARIOS,{
+            method:"",
+            headers:{"Content-Type":"aplication/json"},
+            body:JSON.stringify(cardapio)
+         });
+
+         if (res.ok) {
+            alert("Refeição cadastrada com sucesso!");
+            listarCardapio();
+
+         } else {
+            alert("Erro ao cadastrar refeição")
+         }
+
+    } catch (error) {
+        console.error("erro ao cadastrar".error);
+        alert("Ocorreu um erro ao cadastrar cardapio");
+    }
+
+}
+
+export async function alterarCardapio(id) {
+    try {
+         const res= await fetch(`API_USUARIOS/${id}`);
+        const cardapio= await res.json();
+        document.querySelector("#date").value=cardapio.data.split("T")[0];
+        document.querySelector("select#turnos").value=cardapio.turno;
+        document.querySelector("input[name='refeicao']").value=cardapio.refeicao.titulo;
+        document.querySelector("textarea[name='itens']").value=cardapio.refeicao.itens.join(",");
+        document.querySelector("input[name='bebida']").value=cardapio
+        
+        
+
+    } catch (error) {
+        console.error("erro ao alterar cardapio".error);
+        alert("Ocorreu um erro ao alterar cardapio");
+    }
+    
+}
+
+export async function excluirCardapio(id) {
+    try {
+        const res= await fetch(API_USUARIOS)
+       
+
+    } catch (error) {
+        console.error("erro ao excluir cardapio".error);
+        alert("Ocorreu um erro ao excluir cardapio");
+    }
+}
+
+async function buscarCardapio(){
+    try {
+        
+    } catch (error) {
+        
+    }
+    
+}
+
+
+
 
 
 
